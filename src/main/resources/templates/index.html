@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <style>
+        
+        title {
+            color: red;
+        }
+
+       
+        #host-info {
+            position: fixed; 
+            top: 10px;
+            right: 10px;
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 18px; 
+            border-radius: 5px;
+            z-index: 9999; /
+        }
+
+      
+        .navbar {
+            background-color: #333; 
+            color: #fff; 
+        }
+
+        
+        .container {
+            background-color: #fff; 
+            color: #333; 
+            margin-top: 60px; 
+        }
+
+       
+        h1 {
+            color: red;
+        }
+
+        h3 {
+            color: blue;
+        }
+
+        h2 {
+            color: red;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            color: blue;
+            margin-top: 30px;
+            font-size: 18px;
+        }
+
+        ol {
+            list-style-type: decimal;
+            color: blue;
+            font-size: 18px;
+            margin-left: 20px;
+        }
+
+        p {
+            color: red;
+            font-size: 24px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+    <link data-th-href="@{/css/main.css?{id}(id=${timestamp})}" rel="stylesheet">
+    <title>CI-CD-Welcome-Message</title>
+</head>
+<body>
+    <!-- Script to display host info...-->
+
+    <script>
+        // Function to display host info
+        function displayHostInfo() {
+            const hostInfoElement = document.createElement("div");
+            hostInfoElement.id = "host-info";
+            document.body.appendChild(hostInfoElement);
+
+            // Get the hostname and host IP address
+            const hostname = window.location.hostname;
+            const hostIP = window.location.host;
+
+            // Create a span element for host info text with updated styles
+            const hostInfoTextElement = document.createElement("span");
+            hostInfoTextElement.id = "host-info-text";
+            hostInfoTextElement.textContent = `Host: ${hostname} | IP: ${hostIP}`;
+
+            // Append the host info text element to the host info container
+            hostInfoElement.appendChild(hostInfoTextElement);
+        }
+
+        // Call the function to display host info
+        displayHostInfo();
+    </script>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">JendareyTechnologies welcomes you all to "Introduction to Git/Github Class"</a>
+    </nav>
+
+    <main role="main" class="container">
+        <div class="starter-template">
+            <h1 th:text="${title}">Default title.</h1>
+            <h3 th:text="${msg}">Default text.</h3>
+        </div>
+
+        <div>
+            <h2>Here, you'll acquire knowledge and skills in the following areas:</h2>
+            <ul>
+                <li>
+                    <span style="color: red; font-size: 25px;">Git Repositories and Version Control</span>
+                    <ol>
+                        <li>Understand the fundamentals of version control and its significance in collaborative development.</li>
+                        <li>Set up Git repositories to track changes in your codebase.</li>
+                        <li>Learn to manage version history, allowing for easy rollback and collaboration.</li>
+                        <li>Explore branching and merging strategies to work efficiently with teams, ensuring code quality and project stability.</li>
+                    </ol>
+                </li>
+                <li>
+                    <span style="color: red; font-size: 25px;">Git Workflows and Collaboration</span>
+                    <ol>
+                        <li>Dive into different Git workflows, such as feature branching and Gitflow, and understand their applications in various development scenarios.</li>
+                        <li>Collaborate seamlessly with team members by resolving merge conflicts, conducting code reviews, and ensuring codebase integrity.</li>
+                        <li>Master the art of managing remote repositories, enabling efficient teamwork and code sharing.</li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <p>Prepare to dive deep into the world of Git and source code management.</p>
+        </div>
+    </main>
+
+    <script data-th-src="@{/js/main.js}"></script>
+</body>
+</html>
+
