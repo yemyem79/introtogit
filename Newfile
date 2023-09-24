@@ -1,0 +1,5 @@
+|Here's a list of some basic terms related to pull requests in version control systems like Git, along with brief explanations:
+
+Branch Creation: Developers create a new branch to work on specific changes. This branch is often based on the main branch.
+
+Code Changes: Developers make code changes, implementing new features, fixing bugs, or making improvements within their branch.
