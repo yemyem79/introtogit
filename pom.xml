@@ -13,6 +13,8 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>introtogit</name>
 	<description>Demo project for Spring Boot-introtogit</description>
+	<description>Demo project for Spring Boot-introtogit1</description>
+	<description>Demo project for Spring Boot-introtogit2</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
